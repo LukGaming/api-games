@@ -4,13 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class games extends Model
+class ImagesGames extends Model
 {
     protected $filliable = [
         'id',
-        'name',
-        'release_year',
-        'description',
-        'type_of_games_id'
+        'caminho_imagem_game',
+        'games_id'
     ];
 }

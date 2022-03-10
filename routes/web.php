@@ -15,7 +15,7 @@
 
 $router->group(['prefix' => 'api'], function () use ($router) {
     /*Rotas de Games*/
-    $router->get('/games', 'GamesController@index');
+    $router->get('/games', 'gamesController@index');
     $router->post('/games/create', 'GamesController@store');
     $router->get('/games/{id}', 'GamesController@show');
     $router->patch('/games/{id}', 'GamesController@update');
