@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class gamesController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return games::paginate(10);
+        return games::paginate($request->paginate);
     }
     public function store(Request $request)
     {
