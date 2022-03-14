@@ -11,7 +11,8 @@ class ProdutosController extends Controller
 {
     public function index()
     {
-        return Produtos::paginate(100);
+        // return Produtos::paginate(100);
+        return Produtos::find(1)->GameType
     }
     public function store(Request $request)
     {

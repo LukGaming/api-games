@@ -18,7 +18,6 @@ class Games extends Migration
             $table->string('name');
             $table->string('release_year');
             $table->longText('description');
-            $table->unsignedBigInteger('type_of_games_id');
             $table->timestamps();
         });
     }

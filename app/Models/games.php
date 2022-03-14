@@ -11,10 +11,14 @@ class games extends Model
         'name',
         'release_year',
         'description',
-        'type_of_games_id',
+        'gameImages'
     ];
-    public function images()
+    public function gameImages()
     {
         return $this->hasMany(ImagesGames::class);
     }
+    // public function gamesTypes()
+    // {
+    //     return $this->hasMany(typeOfGame::class);
+    // }
 }
