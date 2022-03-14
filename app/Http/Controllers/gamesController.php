@@ -48,4 +48,22 @@ class gamesController extends Controller
         }
 
     }
+    public function show($id)
+    {
+        $game = games::find($id);
+        if ($game) {
+            $game->gameImages;
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Game recuperado com sucesso!',
+                'game' => $game,
+            ]);
+        } else {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'game não encontrado',
+            ]);
+        }
+
+    }
 }
