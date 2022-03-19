@@ -10,7 +10,7 @@ class ImagesGamesController extends Controller
     public function storeImagesGames($image)
     {
         $picName = $image->getClientOriginalName();
-        $path = 'uploads' . DIRECTORY_SEPARATOR . 'games' . DIRECTORY_SEPARATOR;
+        $path = 'uploads' . DIRECTORY_SEPARATOR . 'games' . DIRECTORY_SEPARATOR. 'images'. DIRECTORY_SEPARATOR;
         $picName = uniqid() . '_' . $picName;
         $image_name = $path . $picName;
         $destinationPath = public_path($path);

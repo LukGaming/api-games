@@ -17,8 +17,9 @@ class games extends Model
     {
         return $this->hasMany(ImagesGames::class);
     }
-    // public function gamesTypes()
-    // {
-    //     return $this->hasMany(typeOfGame::class);
-    // }
+    public function gameVideos()
+    {
+        return $this->hasMany(gameVideos::class);
+    }
+
 }

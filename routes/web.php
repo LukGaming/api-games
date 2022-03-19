@@ -20,7 +20,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->post('/games/create', 'GamesController@store');
     $router->get('/games/{id}', 'GamesController@show');
     $router->patch('/games/{id}', 'GamesController@update');
-    $router->delete('/produtos/{id}', 'GamesController@destroy');
+    // $router->delete('/produtos/{id}', 'GamesController@destroy');
     $router->get('/games/{id}/edit', 'GamesController@edit');
     /*Rotas de Games*/
     /*Rota de Imagens*/
