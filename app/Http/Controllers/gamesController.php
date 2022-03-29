@@ -80,11 +80,22 @@ class gamesController extends Controller
     }
     public function update($id, Request $request)
     {
-        return response()->json([
-            'status' => 'error',
-            'message' => 'game não encontrado',
-            'request' => $request,
-        ]);
-
+        try {
+            $game = games::findOrFail($id);
+            // dd($game);
+            $game->name = $request->name;
+            $game->release_year = $request->release_year;
+            $game->description = $request->description;
+            // $game->id_categoria = $request->id_categoria; //Trocar para a categoria posteriormente
+            if ($game->save()) {
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'Game Editado com sucesso!',
+                    'produto' => $game,
+                ]);
+            }
+        } catch (\Exception$e) {
+            return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
+        }
     }
 }
